@@ -1,10 +1,10 @@
 
 # Create the file if it doesn't exist
-with open("text.txt", "a") as f:
+with open("tasks.txt", "a") as f:
     pass
 
 # Display existing tasks
-with open("text.txt", "r") as f:
+with open("tasks.txt", "r") as f:
     a = f.read()
     print(a)
 
@@ -35,7 +35,7 @@ if opt == 1:
     else:
         print("Enter your tasks!")
 
-        with open("text.txt", "a") as f:
+        with open("tasks.txt", "a") as f:
             for i in range(nof):
                 task = input(f"{i + 1}. ")
 
@@ -48,7 +48,7 @@ if opt == 1:
 # OPTION 2: MARK A TASK AS DONE
 elif opt == 2:
 
-    with open("text.txt", "r") as f:
+    with open("tasks.txt", "r") as f:
         tasks = [line.strip() for line in f if line.strip()]
 
     if not tasks:
@@ -80,7 +80,7 @@ elif opt == 2:
         else:
             tasks[task_no - 1] = "[✓] " + tasks[task_no - 1][4:]
 
-            with open("text.txt", "w") as f:
+            with open("tasks.txt", "w") as f:
                 f.write("\n".join(tasks) + "\n")
 
             print("Task marked as done!")
@@ -92,7 +92,7 @@ elif opt == 3:
     confirm = input("Are you sure you want to clear all tasks? (y/n): ")
 
     if confirm.lower() == "y":
-        with open("text.txt", "w") as f:
+        with open("tasks.txt", "w") as f:
             pass
 
         print("All tasks cleared!")
