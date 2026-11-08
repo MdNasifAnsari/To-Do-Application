@@ -22,4 +22,6 @@ if opt == 2:
         n = int(input("Enter the index of the file: "))
     except:
         raise ValueError("Enter a valid number!")
+
+    with()
     
